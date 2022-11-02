@@ -1,0 +1,10 @@
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\env_var_keys\exceptions\NoSuchEnvVarRuntimeException.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\env_var_keys\EnvVarKeys.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\lambda_handler\LambdaHandler.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\secondary_port_adapters\dtos\PropertiesOfBucketDto.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\primary_port_initializer\UploadFilePrimaryPortInitializer.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\secondary_port_adapters\FilePropertiesRetrieverSecondaryPortAdapter.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\secondary_port_adapters\exceptions\UploadingFileToS3RuntimeException.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\secondary_port_adapters\FileUploaderProviderSecondaryPortAdapter.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\env_var_keys\UploadFilesUseCaseEnvVarRetriever.java
+C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins\src\main\java\org\julucin\upador_arquivo_plugins\use_cases\upload_file\s3_client\S3ClientInitializer.java

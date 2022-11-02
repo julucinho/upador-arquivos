@@ -1,0 +1,5 @@
+ cd C:\Users\josel\DEVLAB\Pessoal\Apps\Salvar Arquivo Periodicamente\upador-arquivo-plugins
+ aws ecr get-login-password --profile profile-hom | docker login --username AWS --password-stdin 796566290192.dkr.ecr.sa-east-1.amazonaws.com
+ docker build -t upador-arquivos-s3 .
+ docker tag upador-arquivos-s3:latest 796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos-s3:latest
+ docker push 796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos-s3:latest

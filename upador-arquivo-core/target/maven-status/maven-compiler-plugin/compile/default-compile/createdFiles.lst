@@ -1,0 +1,12 @@
+org\julucin\upador_arquivo_core\entities\FileProperties.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\contracts\FileUploader.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\factories\UploadFileUseCaseActivityFactory.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\secondary_ports\FileUploaderProviderSecondaryPort.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\exceptions\FileUploadRuntimeException.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\exceptions\NoSuchFileRuntimeException.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\primary_ports\adapters\UploadFilePrimaryPortAdapter.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\primary_ports\factories\UploadFilePrimaryPortFactory.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\UploadFileUseCaseActivity.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\secondary_ports\FilePropertiesRetrieverSecondaryPort.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\primary_ports\UploadFilePrimaryPort.class
+org\julucin\upador_arquivo_core\use_cases\upload_file\impl\UploadFileUseCaseActivityImpl.class

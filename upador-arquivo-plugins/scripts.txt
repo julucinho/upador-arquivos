@@ -1,0 +1,1 @@
+Compile project with dependencies attached -> mvn compile dependency:copy-dependencies -DincludeScope=runtime -U

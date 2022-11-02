@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for bucket creation
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+
+Mappings:
+  EnvMap:
+    dev:
+      BucketName: "julucin-bucket-salvar-arquivos-periodicamente-dev"
+    hom:
+      BucketName: "julucin-bucket-salvar-arquivos-periodicamente-hom"
+    pro:
+      BucketName: "julucin-bucket-salvar-arquivos-periodicamente-pro"
+
+Resources:
+  BucketSalvarArquivosPeriodicamente:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicReadWrite
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      BucketName: !FindInMap [EnvMap, !Ref Env, BucketName]
+      LifecycleConfiguration:
+        Rules:
+          - ExpirationInDays: 180
+            Id: julucin-bucket-salvar-arquivos-periodicamente-lifecycle-rule
+            Status: 'Enabled'
+            Prefix: ''
+      Tags:
+        - Key: project
+          Value: julucin-salvar-arquivos-periodicamente
+
+Outputs:
+  BucketSalvarArquivosPeriodicamenteOutput:
+    Description: Bucket para armazenamento periódico de arquivos
+    Value: !FindInMap [EnvMap, !Ref Env, BucketName]
+    Export:
+      Name: NomeBucketSalvarArquivosPeriodicamente
