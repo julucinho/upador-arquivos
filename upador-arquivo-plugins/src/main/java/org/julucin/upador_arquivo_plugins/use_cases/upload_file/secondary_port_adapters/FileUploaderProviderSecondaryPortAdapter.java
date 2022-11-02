@@ -1,7 +1,6 @@
 package org.julucin.upador_arquivo_plugins.use_cases.upload_file.secondary_port_adapters;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.julucin.upador_arquivo_core.use_cases.upload_file.impl.contracts.FileUploader;
 import org.julucin.upador_arquivo_core.use_cases.upload_file.impl.secondary_ports.FileUploaderProviderSecondaryPort;
@@ -26,18 +25,15 @@ public class FileUploaderProviderSecondaryPortAdapter implements FileUploaderPro
 
     @Slf4j
     @Getter
-    @RequiredArgsConstructor
-    public static class S3FileUploader implements FileUploader {
-
-        private final S3Client s3Client;
+    public record S3FileUploader(S3Client s3Client) implements FileUploader {
 
         @Override
         public void upload(File file) {
-            log.info("Starting uploading process to S3.");
+            log.info("Starting S3 uploading process.");
             var putObjectRequest = this.initializePutObjectRequest();
-            try{
+            try {
                 this.s3Client.putObject(putObjectRequest, RequestBody.fromFile(file));
-            } catch (Exception exception){
+            } catch (Exception exception) {
                 throw new UploadingFileToS3RuntimeException(file.getName(), exception.getMessage());
             }
         }
