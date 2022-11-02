@@ -28,7 +28,7 @@ class FileUploaderProviderSecondaryPortAdapterTest {
     @DisplayName("Should Have S3Client Attribute Properly Instantiated")
     void shouldHaveS3ClientAttributeProperlyInstantiated(){
         var fileUploader = new FileUploaderProviderSecondaryPortAdapter().usePort();
-        Assertions.assertNotNull(((S3FileUploader) fileUploader).s3Client());
+        Assertions.assertNotNull(((S3FileUploader) fileUploader).getS3Client());
     }
 
     @Test

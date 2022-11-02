@@ -17,7 +17,7 @@ class UploadFileUseCaseActivityFactoryTest {
     @Mock
     FilePropertiesRetrieverSecondaryPort filePropertiesRetrieverSecondaryPort;
 
-    UploadFileUseCaseActivityFactory uploadFileUseCaseActivityFactory = new UploadFileUseCaseActivityFactory();
+    final UploadFileUseCaseActivityFactory uploadFileUseCaseActivityFactory = new UploadFileUseCaseActivityFactory();
 
     @Test
     @DisplayName("Should not return null instance when making method is called")
