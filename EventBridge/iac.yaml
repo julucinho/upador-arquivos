@@ -25,3 +25,4 @@ Resources:
       Targets:
         - Arn: !Ref LambdaArn
           Id: UpadorArquivoTrigger
+          Input: "{ \"teste\": \"teste\"}"
