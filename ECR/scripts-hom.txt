@@ -1,0 +1,3 @@
+cd $env:UpadorArquivoAppCorePath | mvn clean | mvn install
+cd $env:UpadorArquivoAppPluginsPath | mvn clean | mvn compile dependency:copy-dependencies -DincludeScope=runtime –U
+aws ecr get-login-password --profile profile-hom | docker login --username AWS --password-stdin 796566290192.dkr.ecr.sa-east-1.amazonaws.com | docker build -t upador-arquivos . | docker tag upador-arquivos:latest 796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos:latest | docker push 796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos:latest

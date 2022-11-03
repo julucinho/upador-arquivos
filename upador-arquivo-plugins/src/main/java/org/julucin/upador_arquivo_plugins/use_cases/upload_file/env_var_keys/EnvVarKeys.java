@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 class EnvVarKeys {
 
-    public static final String BUCKET_NAME = "BUCKET_NAME";
-    public static final String DESIRED_FILE_NAME = "DESIRED_FILE_NAME";
-    public static final String AWS_REGION = "AWS_REGION";
-    public static final String FULL_PATH_TO_FILE = "FULL_PATH_TO_FILE";
+    public static final String BUCKET_NAME = "BucketName";
+    public static final String DESIRED_FILE_NAME = "DesiredFileName";
+    public static final String AWS_REGION = "AwsRegion";
+    public static final String FULL_PATH_TO_FILE = "FullPathToFile";
 }

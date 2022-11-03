@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "Env",
+    "ParameterValue": "hom"
+  },
+  {
+    "ParameterKey": "LambdaExecutionRole",
+    "ParameterValue": "arn:aws:iam::796566290192:role/upador-arquivos-role-s3-access-hom"
+  },
+  {
+    "ParameterKey": "LambdaImageUri",
+    "ParameterValue": "796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos:latest"
+  }
+]

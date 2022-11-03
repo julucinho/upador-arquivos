@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for Lambda Function creation
+
+Parameters:
+  LambdaImageUri:
+    Type: String
+  LambdaExecutionRole:
+    Type: String
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+
+Resources:
+  LambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub "upador-arquivos-lambda-function-${Env}"
+      Code:
+        ImageUri: !Ref LambdaImageUri
+      Role: !Ref LambdaExecutionRole
+      Environment:
+        Variables:
+          AwsRegion : sa-east-1
+          BucketName : !Sub "julucin-bucket-salvar-arquivos-periodicamente-${Env}"
+          DesiredFileName : desenho.png
+          FullPathToFile : desenho.png
+      PackageType: Image
+      MemorySize: 300
+      Timeout: 120

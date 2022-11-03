@@ -103,10 +103,10 @@
                 <version>2.22.2</version>
                 <configuration>
                     <environmentVariables>
-                        <AWS_REGION>sa-east-1</AWS_REGION>
-                        <BUCKET_NAME>tururu</BUCKET_NAME>
-                        <DESIRED_FILE_NAME>tarara</DESIRED_FILE_NAME>
-                        <FULL_PATH_TO_FILE>src\main\resources\desenho.png</FULL_PATH_TO_FILE>
+                        <AwsRegion>sa-east-1</AwsRegion>
+                        <BucketName>tururu</BucketName>
+                        <DesiredFileName>tarara</DesiredFileName>
+                        <FullPathToFile>src\main\resources\desenho.png</FullPathToFile>
                     </environmentVariables>
                 </configuration>
             </plugin>

@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for Lambda Function creation
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+
+Resources:
+
+  S3AccessRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "upador-arquivos-role-s3-access-${Env}"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+
+  S3AccessRolePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "s3-writing-reading-deleting-access-policy-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:GetObject
+              - s3:ListBucket
+              - s3:ListBuckets
+            Resource: !Sub "arn:aws:s3:::julucin-bucket-salvar-arquivos-periodicamente-${Env}/*"
+      Roles:
+        - !Ref S3AccessRole

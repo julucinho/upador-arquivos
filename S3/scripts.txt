@@ -1,6 +1,0 @@
-DEPLOY:
-    aws cloudformation deploy --template-file iac.yaml --parameter-overrides file://parameters-hom.json --profile profile-hom --stack-name julucin-bucket-salvar-arquivos-periodicamente
-LIST:
-    aws s3 ls --profile profile-hom
-DELETE:
-    aws cloudformation delete-stack --stack-name cloudformationStudyCase --profile profile-hom
