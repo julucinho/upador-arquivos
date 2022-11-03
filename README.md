@@ -10,10 +10,11 @@ This application is designed to periodically be triggered by an external service
 ## V1 - Low level architecture (AWS)
 ![low level architecture imagem; aws case](https://raw.githubusercontent.com/julucinho/upador-arquivos/main/Desenhos/upadorArquivoDesenho-Arquitetura%20baixo%20n%C3%ADvel.drawio.png)
 
-The V1 lower level of abstraction to the solution is represented in the image above. The services being used are 4:
+The V1 lower level of abstraction to the solution is represented in the image above. The services being used are 5:
 - EventBridge
-- Lambda
+- ECR
 - IAM
+- Lambda
 - S3
 
 ### Lambda
