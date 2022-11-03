@@ -12,8 +12,8 @@ This application is designed to periodically be triggered by an external service
 
 The V1 lower level of abstraction to the solution is represented in the image above. The services being used from the current Cloud Provider (AWS) are 5:
 - EventBridge
-- ECR
 - IAM
+- ECR
 - Lambda
 - S3
 
