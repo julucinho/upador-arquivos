@@ -43,3 +43,19 @@ Resources:
             Resource: !Sub "arn:aws:s3:::julucin-bucket-salvar-arquivos-periodicamente-${Env}/*"
       Roles:
         - !Ref S3AccessRole
+
+  S3AccessRolePolicyForLogs:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "logs-for-lambda-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
+            Resource: "*"
+      Roles:
+        - !Ref S3AccessRole
