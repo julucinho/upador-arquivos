@@ -8,46 +8,44 @@ Parameters:
       - dev
       - hom
       - pro
+  LambdaArn:
+    Type: String
 
 Resources:
 
-  S3AccessRole:
+  EventRuleExecutionRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub "upador-arquivos-role-s3-access-${Env}"
+      RoleName: !Sub "upador-arquivos-event-rule-execution-role-${Env}"
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
           - Effect: Allow
             Principal:
               Service:
-                - lambda.amazonaws.com
+                - events.amazonaws.com
             Action:
               - sts:AssumeRole
       Path: /
 
-  S3AccessRolePolicy:
+  EventRuleExecutionRolePolicy:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: !Sub "s3-writing-reading-deleting-access-policy-${Env}"
+      PolicyName: !Sub "lambda-invoking-access-policy-for-event-rule-execution-${Env}"
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
           - Effect: Allow
             Action:
-              - s3:PutObject
-              - s3:DeleteObject
-              - s3:GetObject
-              - s3:ListBucket
-              - s3:ListBuckets
-            Resource: !Sub "arn:aws:s3:::julucin-bucket-salvar-arquivos-periodicamente-${Env}/*"
+              - lambda:InvokeFunction
+            Resource: !Ref LambdaArn
       Roles:
-        - !Ref S3AccessRole
+        - !Ref EventRuleExecutionRole
 
-  S3AccessRolePolicyForLogs:
+  EventRuleExecutionRolePolicyForLogs:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: !Sub "logs-for-lambda-${Env}"
+      PolicyName: !Sub "logs-for-events-rule-execution-${Env}"
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -58,4 +56,4 @@ Resources:
               - logs:PutLogEvents
             Resource: "*"
       Roles:
-        - !Ref S3AccessRole
+        - !Ref EventRuleExecutionRole

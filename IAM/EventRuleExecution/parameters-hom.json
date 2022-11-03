@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "Env",
+    "ParameterValue": "hom"
+  },
+  {
+    "ParameterKey": "LambdaArn",
+    "ParameterValue": "arn:aws:lambda:sa-east-1:796566290192:function:upador-arquivos-lambda-function-hom"
+  }
+]

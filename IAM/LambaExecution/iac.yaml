@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for Lambda Function creation
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+  LambdaKmsKey:
+    Type: String
+
+Resources:
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "upador-arquivos-role-s3-access-${Env}"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+
+  LambdaExecutionRolePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "s3-writing-reading-deleting-access-policy-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:GetObject
+              - s3:ListBucket
+              - s3:ListBuckets
+            Resource: !Sub "arn:aws:s3:::julucin-bucket-salvar-arquivos-periodicamente-${Env}/*"
+      Roles:
+        - !Ref LambdaExecutionRole
+
+  LambdaExecutionRolePolicyForLogs:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "logs-for-lambda-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
+            Resource: "*"
+      Roles:
+        - !Ref LambdaExecutionRole
+
+  LambdaExecutionRolePolicyForKms:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "kms-for-lambda-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - kms:Decrypt
+            Resource: !Ref LambdaKmsKey
+      Roles:
+        - !Ref LambdaExecutionRole

@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for Lambda Function creation
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+  LambdaArn:
+    Type: String
+  ExecutionRoleArn:
+    Type: String
+Resources:
+
+  UpadorArquivoTrigger:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Event which will trigger the execution of the Lambda Function which uploads files to S3.
+      Name: !Sub "upador-arquivo-trigger-${Env}"
+      RoleArn: !Ref ExecutionRoleArn
+      ScheduleExpression: rate(2 minutes)
+      State: ENABLED
+      Targets:
+        - Arn: !Ref LambdaArn
+          Id: UpadorArquivoTrigger

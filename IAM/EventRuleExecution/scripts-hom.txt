@@ -1,0 +1,5 @@
+DEPLOY:
+    cd $env:UpadorArquivoIamEventRuleExecutionIacPath | aws cloudformation deploy --template-file iac.yaml --parameter-overrides file://parameters-hom.json --profile profile-hom --stack-name julucin-event-rule-execution-roles-salvar-arquivos-periodicamente --capabilities CAPABILITY_NAMED_IAM
+
+DELETE:
+    aws cloudformation delete-stack --stack-name julucin-event-rule-execution-roles-salvar-arquivos-periodicamente --profile profile-hom

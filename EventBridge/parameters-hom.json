@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "Env",
+    "ParameterValue": "hom"
+  },
+  {
+    "ParameterKey": "LambdaArn",
+    "ParameterValue": "arn:aws:lambda:sa-east-1:796566290192:function:upador-arquivos-lambda-function-hom"
+  },
+  {
+    "ParameterKey": "ExecutionRoleArn",
+    "ParameterValue": "arn:aws:iam::796566290192:role/upador-arquivos-event-rule-execution-role-hom"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "Env",
+    "ParameterValue": "hom"
+  },
+  {
+    "ParameterKey": "LambdaKmsKey",
+    "ParameterValue": "arn:aws:kms:sa-east-1:796566290192:key/42e135ce-bf1f-4e27-b1e0-e6b560d64c31"
+  }
+]
