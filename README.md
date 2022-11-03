@@ -23,7 +23,7 @@ For Lambda we have a Java application running. Its component architecture is bas
 #### Core Layer
 This layer is where the core-logic of the application lives at. The core-logic is more of a code-version of the high level architecture of the solution: it materializes the basic workflow with its intrinsic details, which means that it will only change when the logic of the workflow itself changes. Until that happens, the core layer will remain the same. 
 
-Issues such as what kind of services are being integrated with the solution don't really matter to this layer. Today we use AWS, tomorrow we might use Azure... to this layer it doesn't change a thing. 
+Issues such as what kind of services are being integrated with the solution don't really matter to this layer. Currently we use AWS, in the future we might use Azure... to this layer it doesn't change a thing. 
 
 #### Plugins Layer
 This is where the outside of the workflow is at. Components like S3 clients, Lambda request handlers, REST endpoint controllers, Kafka consumer listeners and many more, could all be found here. Those elements are considered outsiders to the core layer because they don't really affect it, they just exist as if they were extensions to it. If the core requests to upload a file, the plugins layer will extend the core layer to perform that behavior, making use of its S3 client component in order to upload the file to some bucket specified. 
