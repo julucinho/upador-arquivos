@@ -1,5 +1,5 @@
 # upador-arquivos
-Repository for articulating knowledges about Clean Arch and integrations with AWS. Java is being used as the background programming language.
+Repository for articulating knowledges about Clean Arch and integrations with Cloud Services. Java is being used as the background programming language.
 
 ## High level architecture
 
