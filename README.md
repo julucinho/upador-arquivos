@@ -29,7 +29,7 @@ The structure of this project os organized separating components per the followi
 
 This way we have the following diagram:
     
-    ```bash
+    
     upador-arquivos/
     ├── Desenhos/
     │   ├── upadorArquivoDesenho-Arquitetura alto nível.drawio.png
@@ -62,7 +62,7 @@ This way we have the following diagram:
     |   └── ...
     └── upador-arquivo-plugins (java application)
         └── ...
-    ```
+    
 
 ## The components
 
