@@ -100,4 +100,4 @@ The application files can be found in two different directories:
 - Plugins layer
 > ./upador-arquivo-plugins/...
 
-__The two application artifacts have 100% of test coverage.__
+_The two application artifacts have 100% of test coverage._
