@@ -92,12 +92,18 @@ This is where the outside of the workflow is at. Components like S3 clients, Lam
 Furthermore, if we wish to switch that client plugin component with another client to a different cloud provider, such as CloudStorage from Google Cloud instead of S3 from AWS, we do this in this layer, without having to touch anything at the core and its workflow will still work, as if nothing changed at all.
 
 Its IaC files can be found at:
->./LambdaFunction/...
+>./LambdaFunction/
 
 The application files can be found in two different directories:
 - Core layer
-> ./upador-arquivo-core/...
+> ./upador-arquivo-core/
 - Plugins layer
-> ./upador-arquivo-plugins/...
+> ./upador-arquivo-plugins/
 
 _The two application artifacts have 100% of test coverage._
+
+### S3
+S3 is being used as the target location for the file storage. Simple as it is.
+
+Its IaC files can be found at:
+>./S3/
