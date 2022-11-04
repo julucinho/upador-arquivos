@@ -18,7 +18,7 @@ The V1 lower level of abstraction to the solution is represented in the image ab
 - Lambda
 - S3
 
-The structure of this project os organized separating components per the following types:
+The structure of this project is organized sorting the components by the following types:
 
 - Architectural drawings
 - AWS Services
