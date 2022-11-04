@@ -103,7 +103,7 @@ The application files can be found in two different directories:
 _The two application artifacts have 100% of test coverage._
 
 ### ECR
-The deployment package type for the Lambda Function is container image: in order to deploy the code into the Lambda service, an image is built and uploaded to the ECR repository resource. From there the Lambda service can pull it and provision the Function resource.
+The deployment package type for the Lambda Function is container image: in order to deploy the code into the Lambda service, an image is built and uploaded to the ECR repository resource. From there the Lambda service can pull it and provision the Function resource instantiating the container.
 
 The Dockerfile can be found at:
 >./upador-arquivo-plugins/Dockerfile
