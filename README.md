@@ -69,12 +69,14 @@ This way we have the following diagram:
 ### IAM
 IAM is used to provision instances of Roles that grant access to the EventBridge and Lambda Function resources to interact with other services.
 
-Its IaC files can be found at ./IAM/...
+Its IaC files can be found at: 
+> ./IAM/
 
 ### EventBridge
 The component implemented using this service was meant to be responsibile for starting up the workflow, triggering the execution of the application periodically at a constant rate. For this resource to work properly it is necessary to have an IAM Role, granting access to the Lambda Function Invoking action and logs actions.
 
-Its IaC files can be found at ./EventBridge/...
+Its IaC files can be found at:
+> ./EventBridge/
 
 ### Lambda
 For Lambda we have a Java application running. Its component architecture is based on the hexagonal and clean architectures. It is because of this that there are two Java projects: the core and the plugins layers, being connected with ports and adapters via dependency management.
@@ -89,9 +91,13 @@ This is where the outside of the workflow is at. Components like S3 clients, Lam
 
 Furthermore, if we wish to switch that client plugin component with another client to a different cloud provider, such as CloudStorage from Google Cloud instead of S3 from AWS, we do this in this layer, without having to touch anything at the core and its workflow will still work, as if nothing changed at all.
 
-Its IaC files can be found at ./LambdaFunction/...
-The application files can be found in two different directories:
-- ./upador-arquivo-core/...
-- ./upador-arquivo-plugins/...
+Its IaC files can be found at:
+>./LambdaFunction/...
 
-The two application artifacts have 100% of test coverage.
+The application files can be found in two different directories:
+- Core layer
+> ./upador-arquivo-core/...
+- Plugins layer
+> ./upador-arquivo-plugins/...
+
+<sup>The two application artifacts have 100% of test coverage.</sup>
