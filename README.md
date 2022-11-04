@@ -64,7 +64,7 @@ This way we have the following diagram:
         └── ...
     
 
-## The components
+## Components
 
 ### IAM
 IAM is used to provision instances of Roles that grant access to the EventBridge and Lambda Function resources to interact with other services.
@@ -102,8 +102,17 @@ The application files can be found in two different directories:
 
 _The two application artifacts have 100% of test coverage._
 
+### ECR
+The deployment package type for the Lambda Function is container image: in order to deploy the code into the Lambda service, an image is built and uploaded to the ECR repository resource. From there the Lambda service can pull it and provision the Function resource.
+
+The Dockerfile can be found at:
+>./upador-arquivo-plugins/Dockerfile
+
+The script to build and then upload the image to ECR can be found at:
+>./ECR/
+
 ### S3
-S3 is being used as the target location for the file storage. Simple as it is.
+S3 is being used to provision the target location for the file storage. Simple as it is.
 
 Its IaC files can be found at:
 >./S3/
