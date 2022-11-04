@@ -28,39 +28,41 @@ The structure of this project os organized separating components per the followi
 - Application Code
 
 This way we have the following diagram:
-
-upador-arquivos/
-├── Desenhos/
-│   ├── upadorArquivoDesenho-Arquitetura alto nível.drawio.png
-│   ├── upadorArquivoDesenho-Arquitetura alto nível.drawio.png
-|   └── upadorArquivoDesenho.drawio
-├── ECR/
-│   └── scripts-hom.txt
-├── EventBridge/
-|   ├── iac.yaml
-|   ├── parameters-hom.json
-|   └── scripts-hom.txt
-├── IAM
-|   ├── EventRuleExecution
-|   |   ├── iac.yaml
-|   |   ├── parameters-hom.json
-|   |   └── scripts-hom.txt
-|   ├── LambdaExecution
-|   |   ├── iac.yaml
-|   |   ├── parameters-hom.json
-|   |   └── scripts-hom.txt
-├── LambdaFunction
-|   ├── iac.yaml
-|   ├── parameters-hom.json
-|   └── scripts-hom.txt
-├── S3
-|   ├── iac.yaml
-|   ├── parameters-hom.json
-|   └── scripts-hom.txt
-├── upador-arquivo-core (java application)
-|   └── ...
-└── upador-arquivo-plugins (java application)
-    └── ...
+    
+    ```bash
+    upador-arquivos/
+    ├── Desenhos/
+    │   ├── upadorArquivoDesenho-Arquitetura alto nível.drawio.png
+    │   ├── upadorArquivoDesenho-Arquitetura alto nível.drawio.png
+    |   └── upadorArquivoDesenho.drawio
+    ├── ECR/
+    │   └── scripts-hom.txt
+    ├── EventBridge/
+    |   ├── iac.yaml
+    |   ├── parameters-hom.json
+    |   └── scripts-hom.txt
+    ├── IAM
+    |   ├── EventRuleExecution
+    |   |   ├── iac.yaml
+    |   |   ├── parameters-hom.json
+    |   |   └── scripts-hom.txt
+    |   ├── LambdaExecution
+    |   |   ├── iac.yaml
+    |   |   ├── parameters-hom.json
+    |   |   └── scripts-hom.txt
+    ├── LambdaFunction
+    |   ├── iac.yaml
+    |   ├── parameters-hom.json
+    |   └── scripts-hom.txt
+    ├── S3
+    |   ├── iac.yaml
+    |   ├── parameters-hom.json
+    |   └── scripts-hom.txt
+    ├── upador-arquivo-core (java application)
+    |   └── ...
+    └── upador-arquivo-plugins (java application)
+        └── ...
+    ```
 
 ## The components
 
