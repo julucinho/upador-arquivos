@@ -22,9 +22,9 @@ The structure of this project os organized separating components per the followi
 
 - Architectural drawings
 - AWS Services
-    - iac
-    - environment variables
-    - script for provisioning
+    - IaC
+    - Environment variables
+    - Script for provisioning
 - Application Code
 
 This way we have the following diagram:
