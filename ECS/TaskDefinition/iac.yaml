@@ -28,7 +28,7 @@ Resources:
             - Name: DesiredFileName
               Value: !Ref DesiredFileName
             - Name: FullPathToFile
-              Value: src\main\resources\desenho.png
+              Value: desenho.png
           Essential: True
           Image: !Ref Image
           LogConfiguration:

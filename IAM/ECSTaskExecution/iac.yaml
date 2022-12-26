@@ -40,7 +40,8 @@ Resources:
                 - ecr:GetDownloadUrlForLayer
                 - ecr:BatchGetImage
                 - logs:CreateLogStream
-                - logs:PutLogEvents"
+                - logs:PutLogEvents
+                - logs:CreateLogGroup
             Resource: '*'
       Roles:
         - !Ref EcsTaskExecutionRole
