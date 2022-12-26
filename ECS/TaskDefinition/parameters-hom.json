@@ -1,0 +1,22 @@
+[
+  {
+    "ParameterKey": "Image",
+    "ParameterValue": "796566290192.dkr.ecr.sa-east-1.amazonaws.com/upador-arquivos:latest"
+  },
+  {
+    "ParameterKey": "TaskExecutionRole",
+    "ParameterValue": "arn:aws:iam::796566290192:role/upador-arquivos-ecs-task-execution-role-hom"
+  },
+  {
+    "ParameterKey": "TaskRole",
+    "ParameterValue": "arn:aws:iam::796566290192:role/upador-arquivos-ecs-task-role-hom"
+  },
+  {
+    "ParameterKey": "BucketName",
+    "ParameterValue": "julucin-bucket-salvar-arquivos-periodicamente-hom"
+  },
+  {
+    "ParameterKey": "DesiredFileName",
+    "ParameterValue": "desenho-upado-a-partir-do-ecs"
+  }
+]

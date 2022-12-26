@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for Lambda Function creation
+
+Parameters:
+  Env:
+    Type: String
+    AllowedValues:
+      - dev
+      - hom
+      - pro
+
+Resources:
+
+  EcsTaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "upador-arquivos-ecs-task-execution-role-${Env}"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+
+  EcsTaskExecutionRolePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "upador-arquivos-ecs-task-execution-role-policy-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+                - ecr:GetAuthorizationToken
+                - ecr:BatchCheckLayerAvailability
+                - ecr:GetDownloadUrlForLayer
+                - ecr:BatchGetImage
+                - logs:CreateLogStream
+                - logs:PutLogEvents"
+            Resource: '*'
+      Roles:
+        - !Ref EcsTaskExecutionRole

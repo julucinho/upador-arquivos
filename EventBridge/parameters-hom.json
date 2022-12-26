@@ -4,11 +4,15 @@
     "ParameterValue": "hom"
   },
   {
-    "ParameterKey": "LambdaArn",
-    "ParameterValue": "arn:aws:lambda:sa-east-1:796566290192:function:upador-arquivos-lambda-function-hom"
+    "ParameterKey": "EcsTaskArn",
+    "ParameterValue": "arn:aws:ecs:sa-east-1:796566290192:task-definition/julucin-ecs-task-salvar-arquivos-periodicamente-ECSTaskDefinition-MZOlXM01yeb9:1"
   },
   {
     "ParameterKey": "ExecutionRoleArn",
     "ParameterValue": "arn:aws:iam::796566290192:role/upador-arquivos-event-rule-execution-role-hom"
+  },
+  {
+    "ParameterKey": "ClusterUpadorArquivo",
+    "ParameterValue": "arn:aws:ecs:sa-east-1:796566290192:cluster/upador-arquivos-cluster"
   }
 ]

@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: IAC Cloudformation Template for ECS Cluster
+
+Parameters:
+  Image:
+    Type: String
+  BucketName:
+    Type: String
+  DesiredFileName:
+    Type: String
+  TaskExecutionRole:
+    Type: String
+  TaskRole:
+    Type: String
+
+Resources:
+
+  ECSTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      ContainerDefinitions:
+        - Name: upador-arquivo-task
+          Environment:
+            - Name: AwsRegion
+              Value: sa-east-1
+            - Name: BucketName
+              Value: !Ref BucketName
+            - Name: DesiredFileName
+              Value: !Ref DesiredFileName
+            - Name: FullPathToFile
+              Value: src\main\resources\desenho.png
+          Essential: True
+          Image: !Ref Image
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: 'upador-arquivos-ecs-task'
+              awslogs-region: 'sa-east-1'
+              awslogs-create-group: true
+              awslogs-stream-prefix: 'upador-arquivos'
+      Cpu: 512
+      ExecutionRoleArn: !Ref TaskExecutionRole
+      Memory: 1024
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+      TaskRoleArn: !Ref TaskRole

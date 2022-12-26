@@ -10,6 +10,8 @@ Parameters:
       - pro
   LambdaArn:
     Type: String
+  AwsAccountId:
+    Type: String
 
 Resources:
 
@@ -28,7 +30,7 @@ Resources:
               - sts:AssumeRole
       Path: /
 
-  EventRuleExecutionRolePolicy:
+  EventRuleExecutionRolePolicyForLambda:
     Type: AWS::IAM::Policy
     Properties:
       PolicyName: !Sub "lambda-invoking-access-policy-for-event-rule-execution-${Env}"
@@ -39,6 +41,33 @@ Resources:
             Action:
               - lambda:InvokeFunction
             Resource: !Ref LambdaArn
+      Roles:
+        - !Ref EventRuleExecutionRole
+
+  EventRuleExecutionRolePolicyForEcs:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub "ecs-task-invoking-access-policy-for-event-rule-execution-${Env}"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - ecs:RunTask
+            Resource: '*'
+          - Effect: Allow
+            Action:
+              - iam:PassRole
+            Resource: '*'
+            Condition:
+              StringLike:
+                iam:PassedToService: 'ecs-tasks.amazonaws.com'
+          - Effect: Allow
+            Action:
+              - iam:PassRole
+            Resource:
+              - !Sub 'arn:aws:iam::${AwsAccountId}:role/upador-arquivos-ecs-task-execution-role-${Env}'
+              - !Sub 'arn:aws:iam::${AwsAccountId}:role/upador-arquivos-ecs-task-role-${Env}'
       Roles:
         - !Ref EventRuleExecutionRole
 

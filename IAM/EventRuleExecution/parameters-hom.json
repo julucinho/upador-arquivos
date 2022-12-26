@@ -6,5 +6,9 @@
   {
     "ParameterKey": "LambdaArn",
     "ParameterValue": "arn:aws:lambda:sa-east-1:796566290192:function:upador-arquivos-lambda-function-hom"
+  },
+  {
+    "ParameterKey": "AwsAccountId",
+    "ParameterValue": "796566290192"
   }
 ]

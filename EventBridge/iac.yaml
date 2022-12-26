@@ -8,9 +8,11 @@ Parameters:
       - dev
       - hom
       - pro
-  LambdaArn:
+  EcsTaskArn:
     Type: String
   ExecutionRoleArn:
+    Type: String
+  ClusterUpadorArquivo:
     Type: String
 Resources:
 
@@ -23,6 +25,15 @@ Resources:
       ScheduleExpression: rate(2 minutes)
       State: ENABLED
       Targets:
-        - Arn: !Ref LambdaArn
+        - Arn: !Ref ClusterUpadorArquivo
+          RoleArn: !Ref ExecutionRoleArn
           Id: UpadorArquivoTrigger
-          Input: "{ \"teste\": \"teste\"}"
+          EcsParameters:
+            TaskCount: 1
+            TaskDefinitionArn: !Ref EcsTaskArn
+            LaunchType: FARGATE
+            NetworkConfiguration:
+              AwsVpcConfiguration:
+                Subnets:
+                  - subnet-03ef82be02885fb12
+                  - subnet-094c66d797d1350f6

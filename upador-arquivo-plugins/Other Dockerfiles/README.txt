@@ -1,0 +1,2 @@
+In order to use any of these other dockerfile files, you must relocate the specific file to the root path of the project (/upador-arquivo-plugins/)
+and take the current one at the root path into this path (/upador-arquivo-plugins/OtherDockerfiles/{folder name of its specific use case}/)

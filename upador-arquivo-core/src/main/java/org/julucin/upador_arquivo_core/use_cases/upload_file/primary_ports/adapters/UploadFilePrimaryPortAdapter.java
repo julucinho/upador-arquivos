@@ -3,6 +3,7 @@ package org.julucin.upador_arquivo_core.use_cases.upload_file.primary_ports.adap
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.julucin.upador_arquivo_core.use_cases.upload_file.UploadFileUseCaseActivity;
+import org.julucin.upador_arquivo_core.use_cases.upload_file.impl.UploadFileUseCaseActivityImpl;
 import org.julucin.upador_arquivo_core.use_cases.upload_file.primary_ports.UploadFilePrimaryPort;
 
 @Slf4j
