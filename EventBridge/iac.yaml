@@ -34,6 +34,7 @@ Resources:
             LaunchType: FARGATE
             NetworkConfiguration:
               AwsVpcConfiguration:
+                AssignPublicIp: ENABLED
                 Subnets:
                   - subnet-03ef82be02885fb12
                   - subnet-094c66d797d1350f6

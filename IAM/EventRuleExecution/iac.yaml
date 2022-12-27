@@ -68,21 +68,15 @@ Resources:
             Resource:
               - !Sub 'arn:aws:iam::${AwsAccountId}:role/upador-arquivos-ecs-task-execution-role-${Env}'
               - !Sub 'arn:aws:iam::${AwsAccountId}:role/upador-arquivos-ecs-task-role-${Env}'
-      Roles:
-        - !Ref EventRuleExecutionRole
-
-  EventRuleExecutionRolePolicyForLogs:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyName: !Sub "logs-for-events-rule-execution-${Env}"
-      PolicyDocument:
-        Version: "2012-10-17"
-        Statement:
           - Effect: Allow
             Action:
-              - logs:CreateLogGroup
+              - ecr:GetAuthorizationToken
+              - ecr:BatchCheckLayerAvailability
+              - ecr:GetDownloadUrlForLayer
+              - ecr:BatchGetImage
               - logs:CreateLogStream
               - logs:PutLogEvents
-            Resource: "*"
+              - logs:CreateLogGroup
+            Resource: '*'
       Roles:
         - !Ref EventRuleExecutionRole

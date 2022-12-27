@@ -5,7 +5,7 @@
   },
   {
     "ParameterKey": "EcsTaskArn",
-    "ParameterValue": "arn:aws:ecs:sa-east-1:796566290192:task-definition/julucin-ecs-task-salvar-arquivos-periodicamente-ECSTaskDefinition-MZOlXM01yeb9:1"
+    "ParameterValue": "arn:aws:ecs:sa-east-1:796566290192:task-definition/julucin-ecs-task-salvar-arquivos-periodicamente-ECSTaskDefinition-UFCQdYgF7OyW:1"
   },
   {
     "ParameterKey": "ExecutionRoleArn",
